@@ -10,7 +10,7 @@ const LPWAPage = lazy(() => import('./pages/LPWA').then(module => ({ default: mo
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <Suspense fallback={<div className="min-h-screen bg-brand-dark flex items-center justify-center text-brand-primary">Loading...</div>}>
         <Routes>
           <Route element={<MainLayout />}>
