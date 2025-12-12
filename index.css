@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Default Dark Theme */
+  --bg-main: #0f172a;      /* Slate 900 */
+  --bg-surface: #1e293b;   /* Slate 800 */
+  --text-primary: #f8fafc; /* Slate 50 */
+  --text-secondary: #94a3b8; /* Slate 400 */
+  --border: #334155;       /* Slate 700 */
+  --primary: #3b82f6;      /* Blue 500 */
+}
+
+.theme-light {
+  --bg-main: #f8fafc;      /* Slate 50 */
+  --bg-surface: #ffffff;   /* White */
+  --text-primary: #0f172a; /* Slate 900 */
+  --text-secondary: #64748b; /* Slate 500 */
+  --border: #e2e8f0;       /* Slate 200 */
+  --primary: #2563eb;      /* Blue 600 */
+}
+
+body { 
+  font-family: 'Inter', sans-serif; 
+  background-color: var(--bg-main); 
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.glass-panel {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-light .glass-panel {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
