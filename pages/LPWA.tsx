@@ -1,40 +1,11 @@
-import React, { useState } from 'react';
-import { Button } from '../components/Button';
-import {
-    Signal, BatteryCharging, Wifi, Box, Tractor,
-    Zap, Globe, Layers, LayoutDashboard, ChevronDown, ChevronUp,
-    Cpu, Activity, CheckCircle2
+```
+import React from 'react';
+import { 
+  Signal, BatteryCharging, Wifi, Box, Tractor, 
+  Zap, Globe, Layers, LayoutDashboard, ChevronDown, ChevronUp,
+  Cpu, Activity, CheckCircle2
 } from 'lucide-react';
 
-export const LPWAPage: React.FC = () => {
-    return (
-        <div className="pt-20 bg-brand-dark min-h-screen animate-fade-in text-brand-text-primary">
-
-            {/* 1. Hero Section */}
-            <section className="relative py-20 lg:py-32 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-surface to-brand-dark" />
-                {/* Background Grid */}
-                <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#3b82f6 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-                            Unlocking the Power of <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">LTE-M and NB-IoT Connectivity</span>
-                        </h1>
-                        <p className="text-xl text-brand-text-secondary mb-8 leading-relaxed">
-                            Ultra-efficient, low-power solutions designed for massive scale and optimal battery life. Deploy your devices with seamless, multi-carrier coverage.
-                        </p>
-                        <div className="flex flex-wrap gap-4">
-                            <Button size="lg">View Data Plans</Button>
-                            <Button variant="outline" size="lg">Talk to an LPWAN Expert</Button>
-                        </div>
-                    </div>
-
-                    <div className="flex justify-center relative">
-                        {/* Stylized Graphic Placeholder */}
-                        <div className="relative w-full max-w-md aspect-square bg-brand-surface/30 rounded-full border border-brand-primary/20 flex items-center justify-center backdrop-blur-sm animate-pulse-slow">
-                            <div className="absolute inset-0 bg-brand-primary/5 rounded-full blur-3xl"></div>
 
                             {/* Center Device */}
                             <div className="relative z-10 w-48 h-48 bg-brand-dark border border-brand-accent rounded-2xl flex flex-col items-center justify-center shadow-2xl shadow-brand-accent/20">
@@ -351,7 +322,7 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
                 {isOpen ? <ChevronUp className="w-5 h-5 text-brand-primary" /> : <ChevronDown className="w-5 h-5 text-brand-text-secondary" />}
             </button>
             <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
+                className={`overflow - hidden transition - all duration - 300 ease -in -out ${ isOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0' } `}
             >
                 <div className="p-5 pt-0 text-brand-text-secondary text-sm border-t border-brand-border/30">
                     <div className="pt-4 leading-relaxed">
