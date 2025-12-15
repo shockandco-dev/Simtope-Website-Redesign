@@ -81,16 +81,18 @@ export const Header: React.FC = () => {
 
                 {/* Dropdown Menu */}
                 {item.children && activeDropdown === item.title && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-brand-dark border border-brand-border rounded-lg shadow-xl overflow-hidden animate-fade-in">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.title}
-                        to={child.path}
-                        className="block px-4 py-3 text-sm text-brand-text-secondary hover:bg-brand-surface hover:text-white transition-colors"
-                      >
-                        {child.title}
-                      </Link>
-                    ))}
+                  <div className="absolute top-full left-0 pt-2 w-48">
+                    <div className="bg-brand-dark border border-brand-border rounded-lg shadow-xl overflow-hidden animate-fade-in">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.title}
+                          to={child.path}
+                          className="block px-4 py-3 text-sm text-brand-text-secondary hover:bg-brand-surface hover:text-white transition-colors"
+                        >
+                          {child.title}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
