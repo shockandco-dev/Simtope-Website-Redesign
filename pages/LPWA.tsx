@@ -175,7 +175,7 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
                 {isOpen ? <ChevronUp className="w-5 h-5 text-brand-primary" /> : <ChevronDown className="w-5 h-5 text-brand-text-secondary" />}
             </button>
             <div
-                className={`overflow - hidden transition - all duration - 300 ease -in -out ${isOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'} `}
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'} `}
             >
                 <div className="p-5 pt-0 text-brand-text-secondary text-sm border-t border-brand-border/30">
                     <div className="pt-4 leading-relaxed">
