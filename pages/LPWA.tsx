@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
     Signal, BatteryCharging,
     ChevronDown, ChevronUp,
@@ -6,11 +7,7 @@ import {
 } from 'lucide-react';
 
 
-interface LPWAPageProps {
-    onConnect?: () => void;
-}
-
-export const LPWAPage: React.FC<LPWAPageProps> = ({ onConnect }) => {
+export const LPWAPage: React.FC = () => {
     return (
         <div className="pt-20 bg-brand-dark min-h-screen animate-fade-in text-brand-text-primary">
 
@@ -29,9 +26,9 @@ export const LPWAPage: React.FC<LPWAPageProps> = ({ onConnect }) => {
                             Ultra-efficient, low-power solutions designed for massive scale and optimal battery life. Deploy your devices with seamless, multi-carrier coverage.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <button onClick={onConnect} className="inline-flex items-center justify-center rounded-md font-medium transition-colors bg-transparent border border-brand-primary text-brand-primary hover:bg-brand-primary/10 h-14 px-8 text-lg">
+                            <Link to="/contact" className="inline-flex items-center justify-center rounded-md font-medium transition-colors bg-transparent border border-brand-primary text-brand-primary hover:bg-brand-primary/10 h-14 px-8 text-lg">
                                 Talk to an LPWAN Expert
-                            </button>
+                            </Link>
                         </div>
                     </div>
 
@@ -153,9 +150,9 @@ export const LPWAPage: React.FC<LPWAPageProps> = ({ onConnect }) => {
                         Get ultra-efficient connectivity designed for scale, durability, and battery life.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                        <button onClick={onConnect} className="inline-flex items-center justify-center rounded-md font-medium transition-colors bg-transparent border border-white text-white hover:bg-white/10 h-14 px-8 text-lg w-full sm:w-auto">
+                        <Link to="/contact" className="inline-flex items-center justify-center rounded-md font-medium transition-colors bg-transparent border border-white text-white hover:bg-white/10 h-14 px-8 text-lg w-full sm:w-auto">
                             Talk to an LPWAN Expert
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </section>

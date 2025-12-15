@@ -1,15 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
     Smartphone, Cpu, Globe,
     BarChart3, Layers, Zap,
     Server, Lock
 } from 'lucide-react';
 
-interface IoTAndESimPageProps {
-    onConnect?: () => void;
-}
 
-export const IoTAndESimPage: React.FC<IoTAndESimPageProps> = ({ onConnect }) => {
+
+export const IoTAndESimPage: React.FC = () => {
     return (
         <div className="pt-20 bg-brand-dark min-h-screen animate-fade-in text-brand-text-primary">
             {/* 1. Hero Section */}
@@ -28,9 +27,9 @@ export const IoTAndESimPage: React.FC<IoTAndESimPageProps> = ({ onConnect }) => 
                             The universal IoT SIM card that fits every device and connects to every network. Reduce your SKUs and simplify your logistics with Simp.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <button onClick={onConnect} className="inline-flex items-center justify-center rounded-md font-medium transition-colors bg-brand-primary text-white hover:bg-blue-600 shadow-lg h-14 px-8 text-lg">
+                            <Link to="/contact" className="inline-flex items-center justify-center rounded-md font-medium transition-colors bg-brand-primary text-white hover:bg-blue-600 shadow-lg h-14 px-8 text-lg">
                                 Order Test Kit
-                            </button>
+                            </Link>
                         </div>
                     </div>
 
@@ -128,19 +127,19 @@ export const IoTAndESimPage: React.FC<IoTAndESimPageProps> = ({ onConnect }) => 
                         {/* Carrier List */}
                         <div className="grid grid-cols-2 gap-4 mb-12">
                             <div className="flex items-center gap-3 bg-brand-surface p-3 rounded-lg border border-brand-border">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Verizon_2015_logo.svg/1200px-Verizon_2015_logo.svg.png" alt="Verizon" className="h-6 object-contain filter grayscale hover:grayscale-0 transition-all" />
+                                <img src="https://www.freeiconspng.com/uploads/verizon-logo-png-1.png" alt="Verizon" className="h-6 object-contain filter grayscale hover:grayscale-0 transition-all" />
                                 <span className="font-bold text-white">Verizon</span>
                             </div>
                             <div className="flex items-center gap-3 bg-brand-surface p-3 rounded-lg border border-brand-border">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/AT%26T_logo_2016.svg/1200px-AT%26T_logo_2016.svg.png" alt="AT&T" className="h-6 object-contain filter grayscale hover:grayscale-0 transition-all" />
+                                <img src="https://simtope.com/_assets/media/0b9d1fecd75255ca3527771141ee642a.png" alt="AT&T" className="h-6 object-contain filter grayscale hover:grayscale-0 transition-all" />
                                 <span className="font-bold text-white">AT&T</span>
                             </div>
                             <div className="flex items-center gap-3 bg-brand-surface p-3 rounded-lg border border-brand-border">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rogers_Communications_logo.svg/2560px-Rogers_Communications_logo.svg.png" alt="Rogers" className="h-6 object-contain filter grayscale hover:grayscale-0 transition-all" />
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Rogers_logo.svg/2560px-Rogers_logo.svg.png" alt="Rogers" className="h-6 object-contain filter grayscale hover:grayscale-0 transition-all" />
                                 <span className="font-bold text-white">Rogers</span>
                             </div>
                             <div className="flex items-center gap-3 bg-brand-surface p-3 rounded-lg border border-brand-border">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Telus-logo.svg/2560px-Telus-logo.svg.png" alt="Telus" className="h-6 object-contain filter grayscale hover:grayscale-0 transition-all" />
+                                <img src="https://1000logos.net/wp-content/uploads/2021/09/Telus-Symbol.png" alt="Telus" className="h-6 object-contain filter grayscale hover:grayscale-0 transition-all" />
                                 <span className="font-bold text-white">Telus</span>
                             </div>
                         </div>
@@ -369,12 +368,9 @@ export const IoTAndESimPage: React.FC<IoTAndESimPageProps> = ({ onConnect }) => 
                         Start building with the Simp Tri-SIM and our powerful platform today. Get the reliable, scalable connectivity your project demands.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                        <button className="inline-flex items-center justify-center rounded-md font-medium transition-colors bg-white text-blue-900 hover:bg-blue-50 h-14 px-8 text-lg w-full sm:w-auto">
-                            Explore Data Plans
-                        </button>
-                        <button className="inline-flex items-center justify-center rounded-md font-medium transition-colors bg-transparent border border-white text-white hover:bg-white/10 h-14 px-8 text-lg w-full sm:w-auto">
+                        <Link to="/contact" className="inline-flex items-center justify-center rounded-md font-medium transition-colors bg-transparent border border-white text-white hover:bg-white/10 h-14 px-8 text-lg w-full sm:w-auto">
                             Contact Sales
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </section>
