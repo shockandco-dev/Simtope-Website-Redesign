@@ -1,8 +1,12 @@
-import React from 'react';
-import { Button } from './Button';
+
+
 import { ChevronRight, Globe, Server } from 'lucide-react';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onConnect?: () => void;
+}
+
+export const Hero = ({ onConnect }: HeroProps) => {
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-[90vh] flex items-center bg-brand-dark">
       {/* Background Elements */}

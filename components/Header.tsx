@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Satellite, Smartphone, ChevronDown, ChevronRight } from 'lucide-react';
-import { NAV_ITEMS } from '../constants';
-import { Button } from './Button';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,97 +32,77 @@ export const Header: React.FC = () => {
         <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
-          <div className="bg-brand-surface border border-brand-border rounded-lg shadow-2xl p-2 overflow-hidden backdrop-blur-xl">
-            {item.children.map((child) => (
+          <Link to="/" className="flex items-center gap-2 group z-50 relative">
+            <div className="w-10 h-10 bg-gradient-to-br from-brand-primary to-brand-accent rounded-lg flex items-center justify-center shadow-lg shadow-brand-primary/20 group-hover:scale-110 transition-transform duration-300">
+              <span className="text-white font-bold text-xl">S</span>
+            </div>
+            <span className="text-white font-bold text-xl tracking-wide group-hover:text-brand-primary transition-colors">
+              SIMTOPE
+            </span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
               <Link
-                key={child.label}
-                to={getPath(child.href)}
-                className="block px-4 py-3 text-sm text-brand-text-secondary hover:text-brand-text-primary hover:bg-brand-dark/10 rounded-md transition-colors"
+                key={link.title}
+                to={link.path}
+                className={`text-sm font-medium transition-colors hover:text-brand-primary ${location.pathname === link.path ? 'text-brand-primary' : 'text-brand-text-secondary'
+                  }`}
               >
-                <div className="flex items-center justify-between">
-                  {child.label}
-                  <ChevronRight className="w-3 h-3 text-brand-text-secondary" />
-                </div>
+                {link.title}
               </Link>
             ))}
+          </nav>
+
+          {/* CTA Button */}
+          <div className="hidden md:block">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-semibold bg-brand-primary text-white hover:bg-blue-600 transition-all shadow-lg shadow-brand-primary/25 hover:shadow-brand-primary/40 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:ring-offset-brand-dark"
+            >
+              Get Connected
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
           </div>
-        </div>
-                )}
-      </div>
-            ))}
 
-      <div className="flex items-center gap-4 pl-4 border-l border-brand-border">
-        <Button variant="outline" size="sm">
-          Client Portal
-        </Button>
-        <Button size="sm">
-          Get Connected
-        </Button>
-      </div>
-    </nav>
-
-          {/* Mobile Menu Button */ }
-  <div className="md:hidden">
-    <button
-      onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-      className="text-brand-text-secondary hover:text-brand-text-primary p-2"
-    >
-      {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-    </button>
-  </div>
-        </div >
-      </div >
-
-  {/* Mobile Menu */ }
-{
-  mobileMenuOpen && (
-    <div className="md:hidden bg-brand-surface border-b border-brand-border absolute w-full shadow-2xl max-h-[80vh] overflow-y-auto">
-      <div className="px-4 pt-2 pb-6 space-y-2">
-        {NAV_ITEMS.map((item) => (
-          <div key={item.label}>
-            {item.children ? (
-              <div className="space-y-1">
-                <button
-                  onClick={() => toggleMobileSubmenu(item.label)}
-                  className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-brand-text-secondary hover:text-brand-text-primary hover:bg-brand-dark/10 rounded-md transition-colors"
-                >
-                  {item.label}
-                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === item.label ? 'rotate-180' : ''}`} />
-                </button>
-                {mobileExpanded === item.label && (
-                  <div className="pl-6 space-y-1 border-l-2 border-brand-border ml-3">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.label}
-                        to={getPath(child.href)}
-                        onClick={handleLinkClick}
-                        className="block px-3 py-2 text-sm text-brand-text-secondary hover:text-brand-text-primary transition-colors"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <Link
-                to={getPath(item.href)}
-                onClick={handleLinkClick}
-                className="block px-3 py-3 text-base font-medium text-brand-text-secondary hover:text-brand-text-primary hover:bg-brand-dark/10 rounded-md transition-colors"
-              >
-                {item.label}
-              </Link>
-            )}
-          </div>
-        ))}
-        <div className="pt-4 flex flex-col gap-3 border-t border-brand-border mt-4">
-          <Button variant="outline" className="w-full justify-center">Client Portal</Button>
-          <Button className="w-full justify-center">Get Connected</Button>
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 text-brand-text-secondary hover:text-white transition-colors z-50 relative"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
       </div>
-    </div>
-  )
-}
-    </header >
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 bg-brand-dark z-40 transition-transform duration-300 md:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+      >
+        <div className="flex flex-col items-center justify-center h-full gap-8 p-4">
+          {navLinks.map((link) => (
+            <Link
+              key={link.title}
+              to={link.path}
+              className={`text-2xl font-bold transition-colors hover:text-brand-primary ${location.pathname === link.path ? 'text-brand-primary' : 'text-brand-text-primary'
+                }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {link.title}
+            </Link>
+          ))}
+          <Link
+            to="/contact"
+            className="mt-8 px-8 py-4 rounded-full text-lg font-bold bg-brand-primary text-white hover:bg-blue-600 transition-all shadow-lg shadow-brand-primary/30 w-full max-w-xs text-center"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Get Connected
+          </Link>
+        </div>
+      </div>
+    </header>
   );
 };

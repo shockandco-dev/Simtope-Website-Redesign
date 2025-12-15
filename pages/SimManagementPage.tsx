@@ -1,8 +1,6 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import {
-    Globe2, Zap, ShieldCheck, Settings, CreditCard, Activity, Lock, Smartphone,
-    Car, Gauge, BatteryCharging, Truck, Container, ChevronDown, ChevronUp
+    Globe2, Zap
 } from 'lucide-react';
 
 interface SimManagementPageProps {

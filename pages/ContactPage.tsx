@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { MapPin, Phone } from 'lucide-react';
 
 export const ContactPage: React.FC = () => {
-    const [submitted, setSubmitted] = useState(false);
+    const [, setSubmitted] = useState(false);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
