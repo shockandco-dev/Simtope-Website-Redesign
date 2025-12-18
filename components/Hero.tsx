@@ -68,9 +68,7 @@ export const Hero: React.FC<HeroProps> = ({ onConnect }) => {
             />
 
             {/* Orbital Accents */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full border border-brand-primary/10 rounded-full animate-[spin_15s_linear_infinite] pointer-events-none">
-              <div className="absolute -top-2 left-1/2 w-4 h-4 bg-brand-primary rounded-full blur-sm"></div>
-            </div>
+
           </div>
         </div>
       </div>
