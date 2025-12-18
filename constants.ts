@@ -26,6 +26,13 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const SERVICES: ServiceItem[] = [
   {
+    id: 'traditional',
+    title: 'Traditional SIMs',
+    description: 'High-grade 2FF, 3FF, and 4FF plastic SIMs optimized for high-volume consumer electronics and legacy hardware.',
+    icon: Radio,
+    features: ['Triple Cut Form Factor', 'High Volume Logistics', 'Custom Branding']
+  },
+  {
     id: 'esim',
     title: 'Enterprise eSIM',
     description: 'Over-the-air provisioning for global IoT deployments. Eliminate physical swapping and manage connectivity remotely.',
@@ -45,13 +52,6 @@ export const SERVICES: ServiceItem[] = [
     description: 'Gap-free global coverage. Seamless switching between cellular and satellite networks for critical asset tracking.',
     icon: Satellite,
     features: ['Pole-to-Pole Coverage', 'Low Latency LEO', 'Failover Redundancy']
-  },
-  {
-    id: 'traditional',
-    title: 'Traditional SIMs',
-    description: 'High-grade 2FF, 3FF, and 4FF plastic SIMs optimized for high-volume consumer electronics and legacy hardware.',
-    icon: Radio,
-    features: ['Triple Cut Form Factor', 'High Volume Logistics', 'Custom Branding']
   }
 ];
 
