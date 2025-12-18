@@ -1,5 +1,6 @@
 
 import React from 'react';
+
 import {
     Globe, ShieldCheck, Cpu, Briefcase,
     MapPin, Users, Target, Rocket
@@ -9,7 +10,7 @@ export const CompanyPage: React.FC = () => {
     return (
         <div className="pt-20 bg-brand-dark min-h-screen animate-fade-in text-brand-text-primary">
 
-            {/* Hero Section */}
+            {/* 1. Hero Section */}
             <section className="relative py-24 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-surface to-brand-dark" />
                 <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#3b82f6 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
@@ -27,7 +28,7 @@ export const CompanyPage: React.FC = () => {
                 </div>
             </section>
 
-            {/* Who We Are & What We Do */}
+            {/* 2. Who We Are & What We Do */}
             <section className="py-20 bg-brand-surface border-y border-brand-border">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -62,7 +63,7 @@ export const CompanyPage: React.FC = () => {
                 </div>
             </section>
 
-            {/* What We Do */}
+            {/* 3. What We Do */}
             <section className="py-24 bg-brand-dark">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
@@ -98,7 +99,7 @@ export const CompanyPage: React.FC = () => {
                 </div>
             </section>
 
-            {/* Who We Do It For */}
+            {/* 4. Who We Do It For */}
             <section className="py-24 bg-brand-surface border-t border-brand-border">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl font-bold mb-12 text-center">Who We Do It For</h2>
@@ -121,7 +122,7 @@ export const CompanyPage: React.FC = () => {
                 </div>
             </section>
 
-            {/* Philosophy */}
+            {/* 5. Values / Ethos */}
             <section className="py-24 bg-brand-dark">
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <Briefcase className="w-12 h-12 text-brand-primary mx-auto mb-6" />

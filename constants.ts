@@ -1,3 +1,4 @@
+
 import { Smartphone, Cpu, Satellite, Radio } from 'lucide-react';
 import { NavItem, ServiceItem, StatItem } from './types';
 
@@ -5,23 +6,21 @@ export const NAV_ITEMS: NavItem[] = [
   {
     label: 'Connectivity',
     children: [
-      { label: 'IoT SIM & eSIM', href: '/iot-sim' },
-      { label: 'IoT Coverage', href: '/#coverage' },
-      { label: 'SIM Management', href: '/#platform' },
-      { label: 'Satellite IoT', href: '/satellite' },
-      { label: 'LPWA', href: '/lpwa' },
+      { label: 'IoT SIM & eSIM', href: '#esim' },
+      { label: 'SIM Management', href: '#platform' },
+      { label: 'Satellite IoT', href: '#satellite' },
+      { label: 'LPWA', href: '#lpwa' },
     ]
   },
   {
     label: 'Services',
     children: [
-      { label: 'Deployment Services', href: '/#deployment' },
-      { label: 'End-to-End Managed Services', href: '/#managed-services' },
+      { label: 'Deployment Services', href: '#deployment' },
     ]
   },
   {
     label: 'Company',
-    href: '/#contact'
+    href: '#contact'
   }
 ];
 
@@ -57,8 +56,8 @@ export const SERVICES: ServiceItem[] = [
 ];
 
 export const STATS: StatItem[] = [
-  { label: 'Countries Covered', value: '190', suffix: '+' },
-  { label: 'Active Endpoints in Canada', value: '100', suffix: 'K' },
-  { label: 'Uptime SLA', value: '99.99', suffix: '%' },
+  { label: 'Active Endpoints', value: '100', suffix: 'K' },
   { label: 'Years Experience', value: '20', suffix: '+' },
+  { label: 'Countries Covered', value: '190', suffix: '+' },
+  { label: 'Uptime SLA', value: '99.99', suffix: '%' },
 ];

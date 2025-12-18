@@ -1,68 +1,77 @@
 
-
-import { ChevronRight, Globe, Server } from 'lucide-react';
+import React from 'react';
+import { Button } from './Button';
+import { ChevronRight } from 'lucide-react';
 
 interface HeroProps {
   onConnect?: () => void;
 }
 
-export const Hero = ({ onConnect }: HeroProps) => {
+export const Hero: React.FC<HeroProps> = ({ onConnect }) => {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-[90vh] flex items-center bg-brand-dark">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-brand-primary/20 via-brand-dark to-brand-dark -z-10" />
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-primary/5 to-transparent -z-10 blur-3xl" />
-      <div className="absolute inset-0 -z-10" style={{ backgroundImage: 'radial-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px)', backgroundSize: '50px 50px' }}></div>
+    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex items-center bg-brand-dark">
+      {/* Dynamic Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,_rgba(59,130,246,0.15),transparent_60%)]"></div>
+      <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.03]"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
 
-          <div className="space-y-8 relative z-10 order-2 lg:order-1">
-            <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-brand-text-primary leading-[1.1]">
-              THE Canadian source for <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary">
-                IoT Connectivity
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest animate-pulse">
+              <span className="w-2 h-2 rounded-full bg-brand-primary"></span>
+              Tier-1 Network Status: Active
+            </div>
+
+            <h1 className="text-6xl lg:text-8xl font-black tracking-tighter leading-[0.9] text-brand-text-primary">
+              BEYOND <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary animate-gradient-x">
+                LIMITS.
               </span>
             </h1>
 
-            <p className="text-lg text-brand-text-secondary max-w-xl leading-relaxed">
-              We engineer the connectivity infrastructure that powers the future.
-              From soldered MFF2 chips to satellite failover systems, Simtope delivers
-              unbreakable networks for mission-critical enterprise applications.
+            <p className="text-xl text-brand-text-secondary max-w-xl leading-relaxed font-medium">
+              We engineer the unbreakable connectivity backbone for modern industry.
+              From MFF2 industrial chips to global satellite orbits, Simtope is your single source for zero-latency IoT.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button
-                onClick={onConnect}
-                className="inline-flex items-center justify-center rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary bg-brand-primary text-white hover:bg-blue-600 shadow-lg shadow-blue-500/30 h-14 px-8 text-lg group"
-              >
+              <Button size="lg" className="group text-xl px-10" onClick={onConnect}>
                 Explore Solutions
-                <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
+                <ChevronRight className="w-6 h-6 ml-2 group-hover:translate-x-2 transition-transform" />
+              </Button>
             </div>
 
-            <div className="pt-8 border-t border-brand-border flex items-center gap-8 text-brand-text-secondary text-sm font-medium">
-              <div className="flex items-center gap-2">
-                <Globe className="w-5 h-5 text-brand-primary" />
-                <span>190+ Countries</span>
+            <div className="pt-12 flex flex-wrap gap-10 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-brand-text-primary">190+</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-brand-text-secondary">Countries</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Server className="w-5 h-5 text-brand-primary" />
-                <span>Tier-1 Infrastructure</span>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-brand-text-primary">100%</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-brand-text-secondary">Uptime SLA</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-brand-text-primary">MFF2</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-brand-text-secondary">Industrial Std</span>
               </div>
             </div>
           </div>
 
-          <div className="relative h-[500px] w-full flex items-center justify-center lg:perspective-[2000px] order-1 lg:order-2">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-primary/10 blur-[80px] rounded-full pointer-events-none"></div>
+          <div className="relative group">
+            {/* Antigravity floating effect */}
+            <div className="absolute inset-0 bg-brand-primary/20 blur-[120px] rounded-full animate-pulse-slow"></div>
             <img
               src="https://cdn.shopify.com/s/files/1/0869/1223/7849/files/hero-image.png?v=1764880978"
-              alt="eSIM, Nano SIM, and Satellite Connectivity Stack"
-              className="relative z-10 w-full max-w-md object-contain drop-shadow-2xl animate-float-slow hover:scale-105 transition-transform duration-700"
+              alt="Simtope Connectivity Stack"
+              className="relative z-10 w-full max-w-xl mx-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)] animate-float-slow transition-transform duration-1000 group-hover:scale-110"
             />
 
+            {/* Orbital Accents */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full border border-brand-primary/10 rounded-full animate-[spin_15s_linear_infinite] pointer-events-none">
+              <div className="absolute -top-2 left-1/2 w-4 h-4 bg-brand-primary rounded-full blur-sm"></div>
+            </div>
           </div>
-
         </div>
       </div>
     </section>

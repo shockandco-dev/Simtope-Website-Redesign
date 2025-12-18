@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Hammer, Rocket, Settings, TrendingUp } from 'lucide-react';
 
@@ -35,7 +36,7 @@ export const Process: React.FC = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-surface via-brand-dark to-brand-dark pointer-events-none opacity-50" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
+        
         {/* Header */}
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-5xl font-bold text-brand-text-primary mb-6 tracking-tight">
@@ -45,20 +46,20 @@ export const Process: React.FC = () => {
             </span>
           </h2>
           <p className="text-brand-text-secondary max-w-3xl mx-auto text-lg leading-relaxed">
-            Simplify your IoT journey with Simtope. From concept to scale, we help you focus on driving
+            Simplify your IoT journey with Simtope. From concept to scale, we help you focus on driving 
             meaningful outcomes while we handle the complexities of IoT deployment.
           </p>
         </div>
 
         {/* Steps Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-
+          
           {/* Connector Line (Desktop Only) */}
           <div className="hidden lg:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-brand-border to-transparent -z-10 opacity-50" />
 
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col items-center text-center group">
-
+              
               {/* Icon */}
               <div className="w-24 h-24 rounded-2xl bg-brand-surface/80 backdrop-blur-sm border border-brand-border flex items-center justify-center mb-8 shadow-xl shadow-black/10 group-hover:border-amber-500/50 group-hover:bg-brand-surface transition-all duration-300 relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
@@ -66,7 +67,9 @@ export const Process: React.FC = () => {
               </div>
 
               {/* Step Label */}
-              <h3 className="text-xl font-bold text-amber-500 tracking-widest uppercase">{step.label}</h3>
+              <div className="flex items-center gap-2 mb-3">
+                <h3 className="text-xl font-bold text-amber-500 tracking-widest uppercase">{step.label}</h3>
+              </div>
 
               {/* Title */}
               <h4 className="text-brand-text-primary font-extrabold text-sm mb-4 uppercase tracking-wider h-10 flex items-center justify-center">

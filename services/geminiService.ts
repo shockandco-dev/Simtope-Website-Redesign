@@ -1,9 +1,9 @@
+
 import { GoogleGenAI } from "@google/genai";
 
 declare const process: any;
 
-// Initialize the API client.
-// The API key is assumed to be in process.env.API_KEY
+// Initialize the API client using the environment key.
 const apiKey = process.env.API_KEY || '';
 const ai = new GoogleGenAI({ apiKey });
 
@@ -16,7 +16,8 @@ export const generateChatResponse = async (
   }
 
   try {
-    const model = 'gemini-2.5-flash';
+    // Updated to the recommended model for text tasks
+    const model = 'gemini-3-flash-preview';
     const systemInstruction = `You are the "Simtope Connectivity Architect", an AI assistant on the Simtope website. 
     Simtope is a premium B2B distributor of eSIMs, Soldered SIMs (MFF2), plastic SIMs, and Satellite connectivity.
     Your goal is to help businesses choose the right connectivity hardware and network solutions.
@@ -33,7 +34,7 @@ export const generateChatResponse = async (
 
     const contents = [
       ...history.map(msg => ({
-        role: msg.role,
+        role: msg.role === 'model' ? 'model' : 'user',
         parts: [{ text: msg.text }]
       })),
       { role: 'user', parts: [{ text: message }] }

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { SERVICES } from '../constants';
 import { CheckCircle2 } from 'lucide-react';
@@ -16,14 +17,14 @@ export const Services: React.FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {SERVICES.map((service) => (
-            <div
-              key={service.id}
+            <div 
+              key={service.id} 
               className="group relative bg-brand-surface p-6 rounded-2xl border border-brand-border hover:border-brand-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-brand-primary/10 flex flex-col"
             >
               <div className="w-12 h-12 bg-brand-dark/50 rounded-lg flex items-center justify-center mb-6 text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors">
                 <service.icon className="w-6 h-6" />
               </div>
-
+              
               <h3 className="text-xl font-bold text-brand-text-primary mb-3">{service.title}</h3>
               <p className="text-brand-text-secondary text-sm mb-6 flex-grow leading-relaxed">
                 {service.description}
@@ -37,8 +38,6 @@ export const Services: React.FC = () => {
                   </li>
                 ))}
               </ul>
-
-
             </div>
           ))}
         </div>

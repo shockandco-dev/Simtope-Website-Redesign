@@ -2,10 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./App.tsx",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./layouts/**/*.{js,ts,jsx,tsx}",
+    "./**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -16,8 +13,8 @@ export default {
           primary: 'var(--primary)',
           accent: '#06b6d4',
           text: {
-            primary: 'var(--text-primary)',
-            secondary: 'var(--text-secondary)',
+              primary: 'var(--text-primary)',
+              secondary: 'var(--text-secondary)',
           },
           border: 'var(--border)',
         }
