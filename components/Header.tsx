@@ -17,14 +17,14 @@ export const Header: React.FC = () => {
   // Map labels to URLs
   const getHref = (label: string) => {
     switch (label) {
-      case 'Satellite IoT': return '/satellite.html';
-      case 'IoT SIM & eSIM': return '/iot-esim.html';
-      case 'LPWA': return '/lpwa.html';
-      case 'SIM Management': return '/sim-management.html';
-      case 'Deployment Services': return '/deployment-services.html';
-      case 'Company': return '/company.html';
-      case 'Home': return '/index.html';
-      default: return '/index.html';
+      case 'Satellite IoT': return 'satellite.html';
+      case 'IoT SIM & eSIM': return 'iot-esim.html';
+      case 'LPWA': return 'lpwa.html';
+      case 'SIM Management': return 'sim-management.html';
+      case 'Deployment Services': return 'deployment-services.html';
+      case 'Company': return 'company.html';
+      case 'Home': return 'index.html';
+      default: return 'index.html';
     }
   };
 
@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex justify-between items-center h-full">
           {/* Brand */}
-          <a href="/index.html" className="flex items-center gap-3 cursor-pointer group">
+          <a href="index.html" className="flex items-center gap-3 cursor-pointer group">
             <div className="relative w-10 h-10 flex items-center justify-center">
               <div className="absolute inset-0 bg-brand-primary rounded-xl rotate-3 group-hover:rotate-12 transition-transform"></div>
               <Smartphone className="relative z-10 w-5 h-5 text-white" />
@@ -87,7 +87,7 @@ export const Header: React.FC = () => {
               </div>
             ))}
             <div className="pl-6 ml-6 border-l border-brand-border">
-              <a href="/contact.html">
+              <a href="contact.html">
                 <Button size="sm">Get Connected</Button>
               </a>
             </div>
@@ -139,7 +139,7 @@ export const Header: React.FC = () => {
               </div>
             ))}
             <div className="pt-8">
-              <a href="/contact.html" className="block w-full">
+              <a href="contact.html" className="block w-full">
                 <Button className="w-full" size="lg">Get Connected</Button>
               </a>
             </div>
