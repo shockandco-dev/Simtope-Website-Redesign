@@ -27,7 +27,7 @@ export const DeploymentServicesPage: React.FC = () => {
                         <p className="text-xl text-brand-text-secondary mb-8 leading-relaxed">
                             You'd be mistaken to think deployments are as easy as putting a SIM card in and then sending your device out into the field. Look for an IoT partner that has strong logistics, SIM ordering processes, and manufacturing partners.
                         </p>
-                        <Button size="lg" onClick={() => window.location.href = 'contact.html'}>Talk to an IoT Expert</Button>
+                        <Button size="lg" onClick={() => window.location.href = '/contact.html'}>Talk to an IoT Expert</Button>
                     </div>
                 </div>
             </section>
@@ -255,7 +255,7 @@ export const DeploymentServicesPage: React.FC = () => {
                     <p className="text-brand-text-secondary text-lg mb-12 max-w-3xl mx-auto">
                         Leverage our expertise to minimize risk and accelerate your time to market. From design to deployment, Simtope is your partner in connectivity.
                     </p>
-                    <Button size="lg" className="shadow-xl shadow-brand-primary/20" onClick={() => window.location.href = 'contact.html'}>
+                    <Button size="lg" className="shadow-xl shadow-brand-primary/20" onClick={() => window.location.href = '/contact.html'}>
                         Contact an Expert
                     </Button>
                 </div>

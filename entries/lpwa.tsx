@@ -5,7 +5,7 @@ import { LPWAPage } from '../components/LPWAPage';
 import '../index.css';
 
 const handleConnect = () => {
-    window.location.href = 'contact.html';
+    window.location.href = '/contact.html';
 };
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

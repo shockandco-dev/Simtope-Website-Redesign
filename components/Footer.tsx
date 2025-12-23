@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
 
           <div className="col-span-1 md:col-span-1">
-            <a href="index.html" className="flex items-center gap-2 mb-4 cursor-pointer">
+            <a href="/index.html" className="flex items-center gap-2 mb-4 cursor-pointer">
               <div className="w-8 h-8 bg-brand-primary rounded flex items-center justify-center text-white">
                 <Signal className="w-5 h-5" />
               </div>
@@ -27,22 +27,22 @@ export const Footer: React.FC = () => {
             <h4 className="text-brand-text-primary font-semibold mb-4">Solutions</h4>
             <ul className="space-y-2 text-sm text-brand-text-secondary">
               <li>
-                <a href="iot-esim.html" className="hover:text-brand-primary transition-colors text-left">
+                <a href="/iot-esim.html" className="hover:text-brand-primary transition-colors text-left">
                   eSIM for Enterprise
                 </a>
               </li>
               <li>
-                <a href="iot-esim.html#form-factors" className="hover:text-brand-primary transition-colors text-left">
+                <a href="/iot-esim.html#form-factors" className="hover:text-brand-primary transition-colors text-left">
                   Industrial SIMs
                 </a>
               </li>
               <li>
-                <a href="satellite.html" className="hover:text-brand-primary transition-colors text-left">
+                <a href="/satellite.html" className="hover:text-brand-primary transition-colors text-left">
                   Satellite IoT
                 </a>
               </li>
               <li>
-                <a href="deployment-services.html" className="hover:text-brand-primary transition-colors text-left">
+                <a href="/deployment-services.html" className="hover:text-brand-primary transition-colors text-left">
                   Private LTE/5G
                 </a>
               </li>
@@ -53,7 +53,7 @@ export const Footer: React.FC = () => {
             <h4 className="text-brand-text-primary font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-brand-text-secondary">
               <li>
-                <a href="company.html" className="hover:text-brand-primary transition-colors text-left">
+                <a href="/company.html" className="hover:text-brand-primary transition-colors text-left">
                   About Us
                 </a>
               </li>
